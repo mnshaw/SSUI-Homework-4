@@ -1,0 +1,34 @@
+h2 {
+  text-align: left;
+  color: #990000;
+  font-size: 250%;
+}
+
+p {
+	font-size: 130%;
+}
+
+.list {
+	display: inline-block;
+}
+
+#products {
+	width: 60%;
+}
+
+#num {
+	width: 10%;
+}
+
+#price {
+	width: 10%;
+}
+
+#buttons {
+	width: 15%;
+}
+
+#totalPrice {
+	width: 77%;
+	text-align: right;
+}

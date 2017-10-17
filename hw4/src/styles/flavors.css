@@ -1,0 +1,108 @@
+.splash {
+  margin-top: 10px;
+  width: 100%;
+  height: 450px;
+}
+
+.splash h2 {
+  font-size: 250%;
+  text-align: right; 
+  padding-top: 350px;
+  padding-right: 2.5%;
+}
+
+.Detail #original {
+  /* https://assets.epicurious.com/photos/58eff9404aa0a14da5b90f1d/master/pass/OUR-FAVORITE-CINNAMON-ROLLS-04122017.jpg */
+  background-image: url("../images/original.png");
+}
+
+.Detail #glutenfree {
+	/* https://images.pexels.com/photos/221150/pexels-photo-221150.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb */
+  background-image: url("../images/glutenfree.png");
+}
+
+.Detail #vegan {
+	/* https://4.bp.blogspot.com/-mVrmUKxE0a8/VxysHUUDxeI/AAAAAAAAR5o/_5eDUZ6bL4cVPj7JYORj1-P3E_-hrVGQQCKgB/s1600/Vegan%2Bcinnamon%2Brolls%2B6.jpg */
+  background-image: url("../images/vegan.png");
+}
+
+.Detail #bacon {
+	/* https://www.julieseatsandtreats.com/wp-content/uploads/2014/09/Rolls-Done-Landscape-Watermark.jpg */
+  background-image: url("../images/bacon.png");
+}
+
+.Detail #birthdaycake {
+	/* https://static1.squarespace.com/static/5113fcede4b099bd04eebc8d/t/5161adf3e4b0c98010aa77a4/1365356031615/photo-1.JPG */
+  background-image: url("../images/birthdaycake.png");
+}
+
+.Detail #blackberry {
+	/* https://theseasidebaker.com/wp-content/uploads/2017/03/IMG_2562.jpg */
+  background-image: url("../images/blackberry.png");
+}
+
+.Detail #caramel {
+	/* https://cdn2.tmbi.com/TOH/Images/Photos/37/1200x1200/Cinnamon-Walnut-Sticky-Buns_exps38559_TH133086C07_23_5bC_RMS.jpg */
+  background-image: url("../images/caramel.png");
+}
+
+.Detail #carrot {
+	/* http://thecolorfulkitchen.com/wp-content/uploads/2015/02/Carrot-Cake-Cinnamon-Rolls-Vegan-Gluten-Free-2.jpg */
+  background-image: url("../images/carrot.png");
+}
+
+.Detail #cranberry {
+	/* https://modmealsonmendenhall.files.wordpress.com/2013/12/image.jpg */
+  background-image: url("../images/cranberry.png");
+}
+
+.Detail #lemon {
+	/* https://i.pinimg.com/736x/bf/f3/0f/bff30fb7fbfc9e3c7d82492e89d7b6b3--lemon-filling-almond-paste.jpg */
+  background-image: url("../images/lemon.png");
+}
+
+.Detail #maple {
+	/* https://www.dessertnowdinnerlater.com/wp-content/uploads/2014/09/Apple-Pie-Pecan-Cinnamon-Rolls-with-Salted-Caramel-Glaze-gf-Life-Made-Sweeter.jpg */
+  background-image: url("../images/maple.png");
+}
+
+.Detail #oldfashioned {
+	/* https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjnwc-nkeLWAhUD4SYKHXeJC90QjBwIBA&url=http%3A%2F%2F1.bp.blogspot.com%2F-NlLWlQPZyxg%2FTp8VwnvBjJI%2FAAAAAAAAGMs%2F4nfk8sC0nV0%2Fs1600%2FDSC_0022.JPG&psig=AOvVaw1iJYPU-nlLISKiGgrbkCnj&ust=1507590200040450 */
+  background-image: url("../images/oldfashioned.png");
+}
+
+.Detail #pumpkin {
+	/* https://mbkr-minimalistbaker.netdna-ssl.com/wp-content/uploads/2014/10/1-Bowl-Vegan-PUMPKIN-Cinnamon-Rolls-Simple-perfectly-spiced-delicious.jpg */
+  background-image: url("../images/pumpkin.png");
+}
+
+.Detail #strawberry {
+	/* https://asimplepalate.com/wp-content/uploads/2017/06/strawberry-rhubarb-cinnamon-rolls-1-1000x1500.jpg */
+  background-image: url("../images/strawberry.png");
+}
+
+.Detail #walnut {
+	/* https://i.ytimg.com/vi/ejm2YswlIWE/maxresdefault.jpg */
+  background-image: url("../images/walnut.png");
+}
+
+p {
+	font-size: 130%;
+}
+
+.addToCart {
+	font-size: 130%;
+	text-align: right;
+}
+
+button {
+	display: block;
+	right: 10px;
+	width: 90%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+input {
+	width: 20%;
+}

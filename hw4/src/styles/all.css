@@ -1,0 +1,81 @@
+/* CSS used throughout several pages */
+
+body{
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  color: #660000;
+  font-size: 400%;
+}
+
+h1 a {
+  color: #660000;
+  text-decoration: none;
+}
+
+h1 a:visited {
+  text-decoration: none;
+  color: #660000;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+#cart {
+  top: 50px;
+  right: 22%;
+  position: fixed;
+  display: inline-block;
+  font-size: 200%;
+}
+
+#total {
+  display: inline-block;
+}
+
+nav {
+  font-size: 200%;
+  margin-top: -25px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-align: left;
+}
+
+button {
+    background-color: #990000; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+footer img {
+  width: 10%;
+  margin: 40px;
+}
+
+input[type="number"] {
+  font-size: 130%;
+  margin-bottom: 3px;
+}

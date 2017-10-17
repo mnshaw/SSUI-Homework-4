@@ -1,0 +1,63 @@
+#buns {
+  margin-top: 10px;
+  display: inline-block;
+  width: 66%;
+}
+
+#buns img {
+  width: 100%;
+}
+
+#subHeader {
+  display: inline-block;
+  width:30%;
+}
+
+#subHeader h2 {
+  text-align: left;
+  font-size: 240%;
+}
+
+#subHeader h3 {
+  text-align: left;
+  color: #990000;
+  font-size: 250%;
+}
+
+#subHeader p {
+  font-size: 130%;
+}
+
+#flavors h2 {
+  text-align: left;
+  display: inline-block;
+  font-size: 300%;
+  margin-right: 50px;
+}
+
+#flavors p {
+  display: inline-block;
+  font-size: 130%;
+}
+
+#flavors a {
+  color: #990000;
+  text-align: left; 
+  display: block;
+  font-size: 130%;
+  margin: 8px;
+}
+
+#flavorLabels {
+  display: inline-block;
+  width: 60%;
+}
+
+#flavorNum {
+  display: inline-block;
+}
+
+#flavorNum input {
+  display: block;
+}
+
