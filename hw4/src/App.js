@@ -7,6 +7,7 @@ import './styles/flavors.css';
 import Home from './Home.js'
 import Shop from './Shop.js'
 import About from './About.js'
+import Detail from './Detail.js'
 
 import cart from "./images/cart.png";
 import ig from "./images/ig.png";
@@ -16,6 +17,12 @@ class App extends Component {
     super(props);
     this.state = {
       page: 0,
+      id:null,
+      title:null,
+      desc:null
+    };
+    this.item = {
+      
     };
   }
 
@@ -23,9 +30,22 @@ class App extends Component {
     if(this.state.page === 0)
       return <Home/>
     if(this.state.page === 1)
-      return <Shop/>
+      return <Shop onClick={this.setDetail.bind(this)} />
     if(this.state.page === 2)
       return <About/>
+    if(this.state.page === 3)
+      return <Detail id={this.state.id} desc={this.state.desc} title={this.state.title} />
+  }
+
+  changePage(state) {
+    this.setState({page: state});
+  }
+
+  setDetail(n, t, d) {
+    console.log(n);
+    console.log(t);
+    console.log(d);
+    this.setState({page: 3, id: n, title:t, desc: d});
   }
 
   render() {
@@ -41,7 +61,7 @@ class App extends Component {
         </div>
 
         <nav>
-          <a onClick={(ev) => this.setState({page: 1})}>Shop</a>
+          <a onClick={(ev) => this.changePage(1)}>Shop</a>
           <a onClick={(ev) => this.setState({page: 2})}>About</a>
         </nav>
 

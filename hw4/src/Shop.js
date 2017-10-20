@@ -5,9 +5,39 @@ import transparentBuns from "./images/transparent-buns.png";
 class Shop extends Component {
   constructor(props) {
     super(props);
+    var original = {id:"original", link: "Original Buns", title: "ORIGINAL BUNS", desc: "Our famous classic cinnamon roll! Our recipe hasn't been changed for generations."}
+    var glutenfree = {id: "glutenfree", link: "Original (Gluten Free)", title: "ORIGINAL (GLUTEN FREE) BUNS", desc: "Our famous classic cinnamon roll with a gluten free spin!"}
+    var vegan = {id: "vegan", link: "Original (Vegan)", title: "ORIGINAL (VEGAN) BUNS", desc: "Our famous classic cinnamon roll with a vegan spin!"}
+    var bacon = {id: "bacon", link: "Bacon", title: "BACON BUNS", desc: "Crunchy, salty bacon sprinkled on a fluffy, sweet cinnamon roll… Don’t you want to try this match made in heaven?"}
+    var birthdaycake = {id: "birthdaycake", link: "Birthday Cake", title: "BIRTHDAY CAKE BUNS", desc: "Bun buns for your birthday! Or any other day of the year."}
+    var blackberry = {id: "blackberry", link: "Blackberry", title: "BLACKBERRY BUNS", desc: "Juicy blackberries add a sweet but tart kick to our bun buns."}
+    var caramel = {id: "caramel", link: "Caramel Pecan", title: "CARAMEL PECAN BUNS", desc: "Who doesn't love some caramel added to their pastries? With a perfect amount of crunch from some pecans!"}
+    var carrot = {id: "carrot", link: "Carrot Cake", title: "CARROT CAKE BUNS", desc: "For those rabbits *ahem* carrot lovers out there."}
+    var cranberry = {id: "cranberry", link: "Cranberry", title: "CRANBERRY BUNS", desc: "If you love cranberry juice, you should try these out!"}
+    var lemon = {id:"lemon", link:"Lemon Lavendar", title: "LEMON LAVENDAR BUNS", desc: "Lemon and Lavender Lovers unite! LLL!"}
+    var maple = {id: "maple", link: "Maple Apple Pecan", title: "MAPLE APPLE PECAN BUNS", desc: "A very homey version of our delectable bun buns. Sure to be a hit with all ages!"}
+    var oldfashioned = {id: "oldfashioned", link: "Old Fashioned Buttermilk", title: "OLD FASHIONED BUTTERMILK BUNS", desc: "Our grandma's recipe for buttermilk bun buns. The recipe is a secret passed down through our family!"}
+    var pumpkin = {id: "pumpkin", link: "Pumpkin Spice", title: "PUMPKIN SPICE BUNS", desc: "Basic people rejoice! This bun bun is back due to popular demand!"}
+    var strawberry = {id: "strawberry", link: "Strawberry Rhubarb", title: "STRAWBERRY RHUBARB BUNS", desc: "Our strawberries and rhubarb are locally sourced from our own backyard!"}
+    var walnut = {id: "walnut", link: "Walnut", title: "WALNUT BUNS", desc: "Walnuts add crunch and a slightly smokey depth."}
+    this.flavors = [original, glutenfree, vegan, bacon, birthdaycake, blackberry, caramel, carrot, cranberry, lemon, maple, oldfashioned, pumpkin, strawberry, walnut]
   }
 
-  render() {
+  renderLabels() {
+    var elements = []
+    for(var i=0; i < this.flavors.length; i++)
+    {
+      let item = this.flavors[i]
+      elements.push(<a onClick={() => {this.props.onClick(item.id, item.title, item.desc)}}>{item.link}</a>)
+    }
+    return (
+      <div id="flavorLabels">
+        {elements}
+      </div>
+    )
+  }
+
+  renderStore() {
     return (
       <div className="Shop">
         <div id="buns">
@@ -21,25 +51,10 @@ class Shop extends Component {
 
         <div id="flavors">
           <h2>Flavors</h2>
-          <p>Originals are $3/bun, everything else is $4/bun</p>
+          <p>Everything is $3/bun!</p>
 
-          <div id="flavorLabels">
-            <a href="./flavors/original.html">Original</a>
-            <a href="./flavors/glutenfree.html">Original (Gluten Free)</a>
-            <a href="./flavors/vegan.html">Original (Vegan)</a>
-            <a href="./flavors/bacon.html">Bacon</a>
-            <a href="./flavors/birthdaycake.html">Birthday Cake</a>
-            <a href="./flavors/blackberry.html">Blackberry</a>
-            <a href="./flavors/caramel.html">Caramel Pecan</a>
-            <a href="./flavors/carrot.html">Carrot Cake</a>
-            <a href="./flavors/cranberry.html">Cranberry</a>
-            <a href="./flavors/lemon.html">Lemon Lavender</a>
-            <a href="./flavors/maple.html">Maple Apple Pecan</a>
-            <a href="./flavors/oldfashioned.html">Old Fashioned Buttermilk</a>
-            <a href="./flavors/pumpkin.html">Pumpkin Spice</a>
-            <a href="./flavors/strawberry.html">Strawberry Rhubarb</a>
-            <a href="./flavors/walnut.html">Walnut</a>
-          </div>
+          {this.renderLabels()}
+
 
           <div id="flavorNum">
             <input class="input" id="original" type="number" value="0" min="0" />
@@ -63,6 +78,12 @@ class Shop extends Component {
         <button type="button" onclick="findTotal()">Add to Cart</button>
 
       </div>
+    )
+  }
+
+  render() {
+    return (
+      this.renderStore()    
     );
   }
 }

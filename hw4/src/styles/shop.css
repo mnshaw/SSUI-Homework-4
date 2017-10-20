@@ -46,6 +46,7 @@
   display: block;
   font-size: 130%;
   margin: 8px;
+  text-decoration: underline;
 }
 
 #flavorLabels {
