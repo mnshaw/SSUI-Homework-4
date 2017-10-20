@@ -37,6 +37,19 @@ class Shop extends Component {
     )
   }
 
+  findTotal(){
+    var arr = document.getElementsByClassName('input');
+    var added = {};
+    for (var i = 0; i < arr.length; i++) {
+      if (parseInt(arr[i].value)) {
+        let item = {id: arr[i].id, value:arr[i].value};
+        added[item.id] = item.value;
+      }
+    }
+
+    this.props.addToCart(added);
+  }
+
   renderStore() {
     return (
       <div className="Shop">
@@ -54,29 +67,7 @@ class Shop extends Component {
           <p>Everything is $3/bun!</p>
 
           {this.renderLabels()}
-
-
-          <div id="flavorNum">
-            <input class="input" id="original" type="number" value="0" min="0" />
-            <input class="input" id="glutenfree" type="number" value="0" min="0" />
-            <input class="input" id="vegan" type="number" value="0" min="0" />
-            <input class="input" id="bacon" type="number" value="0" min="0" />
-            <input class="input" id="birthdaycake" type="number" value="0" min="0" />
-            <input class="input" id="blackberry" type="number" value="0" min="0" />
-            <input class="input" id="caramel" type="number" value="0" min="0" />
-            <input class="input" id="carrot" type="number" value="0" min="0" />
-            <input class="input" id="cranberry" type="number" value="0" min="0" />
-            <input class="input" id="lemon" type="number" value="0" min="0" />
-            <input class="input" id="maple" type="number" value="0" min="0" />
-            <input class="input" id="oldfashioned" type="number" value="0" min="0" />
-            <input class="input" id="pumpkin" type="number" value="0" min="0" />
-            <input class="input" id="strawberry" type="number" value="0" min="0" />
-            <input class="input" id="walnut" type="number" value="0" min="0" />
-          </div>
         </div>
-
-        <button type="button" onclick="findTotal()">Add to Cart</button>
-
       </div>
     )
   }

@@ -5,6 +5,17 @@ import './styles/flavors.css';
 class Detail extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      num: 0
+    }
+  }
+
+  findTotal(id) {
+    this.props.addToCart(id, this.state.num);
+  }
+
+  handleChange(event) {
+    this.setState({num: event.target.value})
   }
 
   render() {
@@ -19,8 +30,8 @@ class Detail extends Component {
 
         <div className="addToCart">
           How many bun buns?
-          <input className="input" type="number" value="0" min="0" />
-          <button type="button" onclick="findTotal()">Add to Cart</button>
+          <input className="input" type="number" value={this.state.num} min="0" onChange={this.handleChange.bind(this)}/>
+          <button type="button" onClick={() => {this.findTotal(this.props.id)}}>Add to Cart</button>
         </div> 
       </div>
     );

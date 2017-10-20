@@ -19,10 +19,24 @@ class App extends Component {
       page: 0,
       id:null,
       title:null,
-      desc:null
+      desc:null,
     };
-    this.item = {
-      
+    this.cart = {
+      original: 0,
+      glutenfree: 0,
+      vegan: 0,
+      bacon: 0,
+      birthdaycake: 0,
+      blackberry: 0,
+      caramel: 0,
+      carrot: 0,
+      cranberry: 0,
+      lemon: 0,
+      maple: 0,
+      oldfashioned: 0,
+      pumpkin: 0,
+      strawberry: 0,
+      walnut: 0
     };
   }
 
@@ -30,11 +44,11 @@ class App extends Component {
     if(this.state.page === 0)
       return <Home/>
     if(this.state.page === 1)
-      return <Shop onClick={this.setDetail.bind(this)} />
+      return <Shop onClick={this.setDetail.bind(this)} addToCart={this.addToCart.bind(this)} />
     if(this.state.page === 2)
       return <About/>
     if(this.state.page === 3)
-      return <Detail id={this.state.id} desc={this.state.desc} title={this.state.title} />
+      return <Detail id={this.state.id} desc={this.state.desc} title={this.state.title} addToCart={this.addToCart.bind(this)}/>
   }
 
   changePage(state) {
@@ -42,10 +56,21 @@ class App extends Component {
   }
 
   setDetail(n, t, d) {
-    console.log(n);
-    console.log(t);
-    console.log(d);
     this.setState({page: 3, id: n, title:t, desc: d});
+  }
+
+  updateCart() {
+    var tot = 0;
+    for (let key of Object.entries(this.cart)) {
+      tot += key[1];
+    } 
+    document.getElementById('total').textContent = tot;
+  }
+
+  addToCart(id, num) {
+    this.cart[id] = this.cart[id] + parseInt(num);
+    this.updateCart();
+    console.log(this.cart);
   }
 
   render() {
