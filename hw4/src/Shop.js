@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from './Item.js'
 
 import transparentBuns from "./images/transparent-buns.png";
 
@@ -28,7 +29,7 @@ class Shop extends Component {
     for(var i=0; i < this.flavors.length; i++)
     {
       let item = this.flavors[i]
-      elements.push(<a onClick={() => {this.props.onClick(item.id, item.title, item.desc)}}>{item.link}</a>)
+      elements.push(<Item onClick={() => {this.props.onClick(item.id, item.title, item.desc)}} id={item.id} title={item.title} link={item.link} desc={item.desc} cart={this.props.cart}/>)
     }
     return (
       <div id="flavorLabels">
@@ -63,9 +64,7 @@ class Shop extends Component {
         </div>
 
         <div id="flavors">
-          <h2>Flavors</h2>
-          <p>Everything is $3/bun!</p>
-
+          <h2 id="flavorHeader">Flavors</h2>
           {this.renderLabels()}
         </div>
       </div>

@@ -44,7 +44,7 @@ class App extends Component {
     if(this.state.page === 0)
       return <Home/>
     if(this.state.page === 1)
-      return <Shop onClick={this.setDetail.bind(this)} addToCart={this.addToCart.bind(this)} />
+      return <Shop onClick={this.setDetail.bind(this)} addToCart={this.addToCart.bind(this)} cart={this.cart} />
     if(this.state.page === 2)
       return <About/>
     if(this.state.page === 3)
