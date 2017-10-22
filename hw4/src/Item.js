@@ -11,7 +11,7 @@ class Item extends Component {
 
   findQuantity(cart, id) {
     return (
-      <p>Quantity: {cart[id]}</p>
+      <p>Buns In Cart: {cart[id]}</p>
     )
   }
 

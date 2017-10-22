@@ -83,7 +83,7 @@ class App extends Component {
 
   renderPreview() {
     if(this.state.preview === 1)
-      return <Preview cart={this.cart} />
+      return <Preview cart={this.cart} onClick={(ev) => this.setState({page: 4})}/>
   }
 
   render() {

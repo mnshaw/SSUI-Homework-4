@@ -61,6 +61,7 @@ class Preview extends Component {
     return (
       <div className="Preview">
         {this.renderList(this.props.cart)}
+        <button type="button" onClick={this.props.onClick}>View Cart</button>
       </div>
     );
   }
