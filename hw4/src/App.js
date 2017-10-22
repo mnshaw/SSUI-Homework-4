@@ -8,6 +8,7 @@ import Home from './Home.js'
 import Shop from './Shop.js'
 import About from './About.js'
 import Detail from './Detail.js'
+import Cart from './Cart.js'
 
 import cart from "./images/cart.png";
 import ig from "./images/ig.png";
@@ -49,6 +50,8 @@ class App extends Component {
       return <About/>
     if(this.state.page === 3)
       return <Detail id={this.state.id} desc={this.state.desc} title={this.state.title} addToCart={this.addToCart.bind(this)}/>
+    if(this.state.page === 4)
+      return <Cart cart={this.cart} removeFromCart={this.removeFromCart.bind(this)} />    
   }
 
   changePage(state) {
@@ -70,7 +73,11 @@ class App extends Component {
   addToCart(id, num) {
     this.cart[id] = this.cart[id] + parseInt(num);
     this.updateCart();
-    console.log(this.cart);
+  }
+
+  removeFromCart(id) {
+    this.cart[id] = 0;
+    this.updateCart();
   }
 
   render() {
@@ -78,11 +85,9 @@ class App extends Component {
       <div className="App">
         <h1><a onClick={(ev) => this.setState({page: 0})}>Bun Bun Bake Shop</a></h1>
 
-        <div id="cart">
+        <div id="cart" onClick={(ev) => this.setState({page: 4})}>
           <div id="total">0</div>
-          <a href="./cart.html"> 
             <img id="cart-icon" src={cart} alt="shopping cart icon" />
-          </a>
         </div>
 
         <nav>
