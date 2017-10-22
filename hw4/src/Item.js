@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import transparentBuns from "./images/transparent-buns.png";
-import './styles/flavors.css';
-
 class Item extends Component {
   constructor(props) {
     super(props);

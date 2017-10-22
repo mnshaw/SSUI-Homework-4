@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import transparentBuns from "./images/transparent-buns.png";
-
 class Cart extends Component {
   constructor(props) {
     super(props);

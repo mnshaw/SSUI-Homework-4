@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import './styles/all.css';
-import './styles/index.css';
-import './styles/shop.css';
-import './styles/cart.css';
-import './styles/flavors.css';
 
 class About extends Component {
   constructor(props) {
