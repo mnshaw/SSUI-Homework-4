@@ -5,6 +5,23 @@ import transparentBuns from "./images/transparent-buns.png";
 class Cart extends Component {
   constructor(props) {
     super(props);
+    this.flavors = {
+      original:"Original Buns", 
+      glutenfree: "Original (Gluten Free)", 
+      vegan: "Original (Vegan)",
+      bacon: "Bacon",
+      birthdaycake: "Birthday Cake",
+      blackberry: "Blackberry",
+      caramel: "Caramel Pecan",
+      carrot: "Carrot Cake",
+      cranberry: "Cranberry",
+      lemon: "Lemon Lavendar",
+      maple: "Maple Apple Pecan",
+      oldfashioned: "Old Fashioned Buttermilk",
+      pumpkin: "Pumpkin Spice", 
+      strawberry: "Strawberry Rhubarb",
+      walnut: "Walnut"
+    }
   }
 
   remove(cart, className, quantity){
@@ -14,11 +31,12 @@ class Cart extends Component {
     }
 
     var price = document.getElementById('totalPrice').textContent;
-    price = price.slice(1) - (quantity * 3);
+    price = price.slice(14);
+    console.log({price});
+    price -= (quantity * 3);
     
     this.props.removeFromCart(className);
-
-    document.getElementById('totalPrice').textContent = "$"+price;
+    document.getElementById('totalPrice').textContent = "Total Price: $" + price;
   }
 
   renderList(cart) {
@@ -29,7 +47,7 @@ class Cart extends Component {
     var totalPrice = 0;
     for (let key of Object.entries(cart)) {
       if (key[1] > 0) {
-        products.push(<p className={key[0]}>{key[0]}</p>);
+        products.push(<p className={key[0]}>{this.flavors[key[0]]}</p>);
         quantity.push(<p className={key[0]}>{key[1]}</p>);
         price.push(<p className={key[0]}>${parseInt(key[1]) * 3}</p>);
         buttons.push(<button className={key[0]} type="button" onClick={() => this.remove(cart, key[0], key[1])}>Remove</button>)
@@ -54,7 +72,7 @@ class Cart extends Component {
           {buttons}
         </div>
 
-        <p id="totalPrice">${totalPrice}</p>
+        <p id="totalPrice">Total Price: ${totalPrice}</p>
       </div>
     )
   }

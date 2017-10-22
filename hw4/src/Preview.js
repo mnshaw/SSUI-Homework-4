@@ -3,6 +3,23 @@ import React, { Component } from 'react';
 class Preview extends Component {
   constructor(props) {
     super(props);
+    this.flavors = {
+      original:"Original Buns", 
+      glutenfree: "Original (Gluten Free)", 
+      vegan: "Original (Vegan)",
+      bacon: "Bacon",
+      birthdaycake: "Birthday Cake",
+      blackberry: "Blackberry",
+      caramel: "Caramel Pecan",
+      carrot: "Carrot Cake",
+      cranberry: "Cranberry",
+      lemon: "Lemon Lavendar",
+      maple: "Maple Apple Pecan",
+      oldfashioned: "Old Fashioned Buttermilk",
+      pumpkin: "Pumpkin Spice", 
+      strawberry: "Strawberry Rhubarb",
+      walnut: "Walnut"
+    }
   }
 
 
@@ -14,7 +31,7 @@ class Preview extends Component {
     var totalPrice = 0;
     for (let key of Object.entries(cart)) {
       if (key[1] > 0) {
-        products.push(<p className={key[0]}>{key[0]}</p>);
+        products.push(<p className={key[0]}>{this.flavors[key[0]]}</p>);
         quantity.push(<p className={key[0]}>Quantity: {key[1]}</p>);
         price.push(<p className={key[0]}><b>${parseInt(key[1]) * 3}</b></p>);
         buttons.push(<button className={key[0]} type="button" onClick={() => this.remove(cart, key[0], key[1])}>Remove</button>)
