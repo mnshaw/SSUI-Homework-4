@@ -9,6 +9,7 @@ import Shop from './Shop.js'
 import About from './About.js'
 import Detail from './Detail.js'
 import Cart from './Cart.js'
+import Preview from './Preview.js'
 
 import cart from "./images/cart.png";
 import ig from "./images/ig.png";
@@ -80,14 +81,20 @@ class App extends Component {
     this.updateCart();
   }
 
+  renderPreview() {
+    if(this.state.preview === 1)
+      return <Preview cart={this.cart} />
+  }
+
   render() {
     return (
       <div className="App">
         <h1><a onClick={(ev) => this.setState({page: 0})}>Bun Bun Bake Shop</a></h1>
 
-        <div id="cart" onClick={(ev) => this.setState({page: 4})}>
+        <div id="cart" onClick={(ev) => this.setState({page: 4})} onMouseEnter={(ev) => this.setState({preview: 1})} onMouseLeave={(ev) => this.setState({preview: 0})}>
           <div id="total">0</div>
             <img id="cart-icon" src={cart} alt="shopping cart icon" />
+          {this.renderPreview()}
         </div>
 
         <nav>

@@ -30,7 +30,7 @@ h2 {
 #cart {
   top: 50px;
   right: 22%;
-  position: fixed;
+  position: absolute;
   display: inline-block;
   font-size: 200%;
 }
@@ -78,4 +78,24 @@ footer img {
 input[type="number"] {
   font-size: 130%;
   margin-bottom: 3px;
+}
+
+.Preview {
+  border-style: solid;
+  width: 200%;
+  padding: 10px;
+  background-color: white;
+  font-size: 30%;
+}
+
+.Preview #products {
+  width: 40%;
+}
+
+.Preview #num {
+  width: 30%;
+}
+
+.Preview #price {
+  width: 20%;
 }
